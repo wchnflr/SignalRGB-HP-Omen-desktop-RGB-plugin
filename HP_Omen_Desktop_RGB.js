@@ -1,7 +1,7 @@
 export function Name() { return "HP Omen Desktop RGB"; }
 export function VendorId() { return 0x103c; }
 export function ProductId() { return 0x84fd; }
-export function Publisher() { return "babamonchu"; }
+export function Publisher() { return "wchnflr"; }
 export function Documentation(){ return "troubleshooting/hp"; }
 export function Size() { return [1,4]; }
 export function DefaultPosition(){return [150, 50]; }
@@ -17,10 +17,13 @@ export function ControllableParameters() {
 export function Initialize() {
 }
 
+// Connector assignments for Oriso Lighting Board 18512-2 348.0DB10.C021 with Nuvoton NUC125LC2AE lighting controller chip
 // CN1 CPU cooler fan
 // CN2 Front diamond
-// CN3 No connect
-// CN4A Interiror light bar
+// CN3 No connect - Unassigned (front case fan?)
+// CN4A Interior light bar
+// CN4B Not installed
+// CN6 USB to motherboard
 var vLedNames = [ "Diamond", "Light Bar", "Unassigned", "CPU Cooler" ]; 
 var vLedPositions = [ [0,1], [0,0], [0,2], [0,3] ];
 
@@ -111,9 +114,9 @@ function sendColors(shutdown = false)
     packet[51] = 0x00 // data 51 - 0x00 from Wireshark
     packet[52] = 0x00 // data 52 - 0x00 from Wireshark
     packet[53] = 0x00 // data 53 - 0x00 from Wireshark
-    packet[54] = 0x00 // data 54 - LED Module ID - Front is 0x01, Inside LED Bar is 0x02, CPU Cooler is 0x04, All lights is 0x00
+    packet[54] = 0x00 // data 54 - LED Module ID - Front is 0x01, Inside LED Bar is 0x02, CPU Cooler is 0x04, all lights is 0x00
     packet[55] = 0x01 // data 55 - 0x01 for the lighting for the computer is on. 0x02 when the computer is suspend.
-    packet[56] = 0x00 // data 56 - Changes the Theme - Galaxy (0x01), Volcano (0x02), Jungle (0x03), Ocean (0x04) etc.; 0x00 from Wireshark
-    packet[57] = 0x00 // data 57 - Changes the speed Slow (0x01), Medium (0x02), Fast (0x03); 0x00 from Wireshark
+    packet[56] = 0x00 // data 56 - Changes the Theme - Galaxy (0x01), Volcano (0x02), Jungle (0x03), Ocean (0x04) etc.; 0x00 for static
+    packet[57] = 0x00 // data 57 - Changes the speed Slow (0x01), Medium (0x02), Fast (0x03); 0x00 for static
     device.write(packet, 58);
 }
