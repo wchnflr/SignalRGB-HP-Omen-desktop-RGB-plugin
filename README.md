@@ -5,3 +5,9 @@ https://www.reddit.com/r/HPOmen/comments/nirgwa/a_way_to_change_hp_omen_lighting
 
 And also the SignalRGB plugins tutorials:
 https://docs.signalrgb.com/plugins
+
+This plugin controls:
+1. Front diamond logo
+2. Interior light bar
+3. CPU cooler fan
+4. Unassigned RGB for a front fan light not installed in my 25L
