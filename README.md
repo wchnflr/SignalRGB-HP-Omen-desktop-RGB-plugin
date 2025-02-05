@@ -11,3 +11,9 @@ This plugin controls:
 2. Interior light bar
 3. CPU cooler fan
 4. Unassigned RGB for a front fan light not installed in my 25L
+
+Installation instructions:
+1. Save HP_Omen_Desktop_RGB.js to C:\Users\[YOUR USERNAME]\Documents\WhirlwindFX\Plugins or wherever your Documents folder is located. https://docs.signalrgb.com/plugins/how-is-a-plugin-loaded-
+2. Restart SignalRGB.
+3. Click on Devices at left under System.
+4. Scroll down to Other Devices to look for HP Omen Desktop RGB.
