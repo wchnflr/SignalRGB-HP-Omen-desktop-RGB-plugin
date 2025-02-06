@@ -3,9 +3,9 @@ export function VendorId() { return 0x103c; }
 export function ProductId() { return 0x84fd; }
 export function Publisher() { return "wchnflr"; }
 export function Documentation(){ return "troubleshooting/hp"; }
-export function Size() { return [1,4]; }
-export function DefaultPosition(){return [150, 50]; }
-export function DefaultScale(){return 2.0}
+export function Size() { return [4,2]; }
+export function DefaultPosition(){return [200, 100]; }
+export function DefaultScale(){return 4.0}
 export function ControllableParameters() {
 	return [
 		{"property":"shutdownColor", "group":"lighting", "label":"Shutdown Color", "min":"0", "max":"360", "type":"color", "default":"009bde"},
@@ -25,7 +25,7 @@ export function Initialize() {
 // CN4B Not installed
 // CN6 USB to motherboard
 var vLedNames = [ "Diamond", "Light Bar", "Unassigned", "CPU Cooler" ]; 
-var vLedPositions = [ [0,1], [0,0], [0,2], [0,3] ];
+var vLedPositions = [ [3,0], [0,0], [3,1], [0,1] ];
 
 export function LedNames() {
 	return vLedNames;
