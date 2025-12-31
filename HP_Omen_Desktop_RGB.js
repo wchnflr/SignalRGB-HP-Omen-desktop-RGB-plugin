@@ -26,7 +26,7 @@ export function Initialize() {
 // CN6 USB to motherboard
 // ARGB1..3 ARGB on 40L lighting controller
 var vLedNames = [ "Diamond", "Light Bar", "Unassigned", "CPU Cooler", "ARGB1", "ARGB2", "ARGB3" ]; 
-var vLedPositions = [ [3,0], [0,0], [3,1], [0,1], [2,0], [1,0], [2,1] ];
+var vLedPositions = [ [4,0], [0,0], [3,1], [0,2], [3,0], [2,0], [1,0] ];
 
 export function LedNames() {
 	return vLedNames;
@@ -109,24 +109,15 @@ function sendColors(shutdown = false)
 //    packet[17] = col[0] // data 17 - CPU Cooler Red Value in hex, Leave at 0x00 for other modes
 //    packet[18] = col[1] // data 18 - CPU Cooler Green Value in hex, Leave at 0x00 for other modes
 //    packet[19] = col[2] // data 19 - CPU Cooler Blue Value in hex, Leave at 0x00 for other modes
-//    packet[29] = 255  // data 29 - Unknown Red Value in hex, Leave at 0x00 for other modes
-//    packet[30] = 255  // data 30 - Unknown Green Value in hex, Leave at 0x00 for other modes
-//    packet[31] = 0    // data 31 - Unknown Blue Value in hex, Leave at 0x00 for other modes
-//    packet[32] = 0    // data 32 - Unknown Red Value in hex, Leave at 0x00 for other modes
-//    packet[33] = 255  // data 33 - Unknown Green Value in hex, Leave at 0x00 for other modes
-//    packet[34] = 255  // data 34 - Unknown Blue Value in hex, Leave at 0x00 for other modes
-//    packet[35] = 255  // data 35 - Unknown Red Value in hex, Leave at 0x00 for other modes
-//    packet[36] = 0    // data 36 - Unknown Green Value in hex, Leave at 0x00 for other modes
-//    packet[37] = 255  // data 37 - Unknown Blue Value in hex, Leave at 0x00 for other modes
-//    packet[38] = 127  // data 38 - Unknown Red Value in hex, Leave at 0x00 for other modes
-//    packet[39] = 0    // data 39 - Unknown Green Value in hex, Leave at 0x00 for other modes
-//    packet[40] = 0    // data 40 - Unknown Blue Value in hex, Leave at 0x00 for other modes
-//    packet[41] = 0    // data 41 - Unknown Red Value in hex, Leave at 0x00 for other modes
-//    packet[42] = 127  // data 42 - Unknown Green Value in hex, Leave at 0x00 for other modes
-//    packet[43] = 0    // data 43 - Unknown Blue Value in hex, Leave at 0x00 for other modes
-//    packet[44] = 0    // data 44 - Unknown Red Value in hex, Leave at 0x00 for other modes
-//    packet[45] = 0    // data 45 - Unknown Green Value in hex, Leave at 0x00 for other modes
-//    packet[46] = 127  // data 46 - Unknown Blue Value in hex, Leave at 0x00 for other modes
+//    packet[20] = col[0] // data 20 - ARGB? Red Value in hex, Leave at 0x00 for other modes
+//    packet[21] = col[1] // data 21 - ARGB? Green Value in hex, Leave at 0x00 for other modes
+//    packet[22] = col[2] // data 22 - ARGB? Blue Value in hex, Leave at 0x00 for other modes
+//    packet[23] = col[0] // data 23 - ARGB? Red Value in hex, Leave at 0x00 for other modes
+//    packet[24] = col[1] // data 24 - ARGB? Green Value in hex, Leave at 0x00 for other modes
+//    packet[25] = col[2] // data 25 - ARGB? Blue Value in hex, Leave at 0x00 for other modes
+//    packet[26] = col[0] // data 26 - ARGB? Red Value in hex, Leave at 0x00 for other modes
+//    packet[27] = col[1] // data 27 - ARGB? Green Value in hex, Leave at 0x00 for other modes
+//    packet[28] = col[2] // data 28 - ARGB? Blue Value in hex, Leave at 0x00 for other modes
 
 	packet[48] = 0x64 // data 38 - Changes Brightness 25% (0x19), 50% (0x32), 75% (0x4b), 100% (0x64)
 	packet[49] = 0x02 // data 49 - 0x0a or 0x04 for system vitals, constantly changing stuff - leave at 0x0a; 0x02 for static color
@@ -140,5 +131,6 @@ function sendColors(shutdown = false)
     packet[57] = 0x00 // data 57 - Changes the speed Slow (0x01), Medium (0x02), Fast (0x03); 0x00 for static
     device.write(packet, 58);
 }
+
 
 
