@@ -3,7 +3,7 @@ export function VendorId() { return 0x103c; }
 export function ProductId() { return 0x84fd; }
 export function Publisher() { return "wchnflr"; }
 export function Documentation(){ return "troubleshooting/hp"; }
-export function Size() { return [4,2]; }
+export function Size() { return [5,2]; }
 export function DefaultPosition(){return [200, 100]; }
 export function DefaultScale(){return 4.0}
 export function ControllableParameters() {
@@ -26,7 +26,7 @@ export function Initialize() {
 // CN6 USB to motherboard
 // ARGB1..3 ARGB on 40L lighting controller
 var vLedNames = [ "Diamond", "Light Bar", "Unassigned", "CPU Cooler", "ARGB1", "ARGB2", "ARGB3" ]; 
-var vLedPositions = [ [4,0], [0,0], [3,1], [0,2], [3,0], [2,0], [1,0] ];
+var vLedPositions = [ [4,0], [0,0], [4,1], [1,1], [3,0], [2,0], [1,0] ];
 
 export function LedNames() {
 	return vLedNames;
@@ -131,6 +131,7 @@ function sendColors(shutdown = false)
     packet[57] = 0x00 // data 57 - Changes the speed Slow (0x01), Medium (0x02), Fast (0x03); 0x00 for static
     device.write(packet, 58);
 }
+
 
 
 
