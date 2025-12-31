@@ -11,6 +11,7 @@ This plugin controls:
 2. Interior light bar
 3. CPU cooler fan
 4. Unassigned RGB for a front fan light not installed in my 25L
+5. ARGB1, ARGB2, ARGB3 lights available in 45L.
 
 Installation instructions:
 1. Save HP_Omen_Desktop_RGB.js to C:\Users\[YOUR USERNAME]\Documents\WhirlwindFX\Plugins or in the WhirlwindFX\Plugins folder wherever your Documents folder is located. https://docs.signalrgb.com/plugins/how-is-a-plugin-loaded-
